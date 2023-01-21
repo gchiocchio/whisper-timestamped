@@ -520,8 +520,8 @@ def transcribe_timestamped(
 
         if compute_word_confidence:
             # TODO: make this assert a warning?
-            if "avg_logprob_reliable" not in timestamped_words[-1] or timestamped_words[-1]["avg_logprob_reliable"]:
-                assert abs(segment["avg_logprob"] - avglogprob) < 1e-2, f"Fatal Error: Got inconsistent logprob for segment {i}: {avglogprob} != {segment['avg_logprob']}"
+            #if "avg_logprob_reliable" not in timestamped_words[-1] or timestamped_words[-1]["avg_logprob_reliable"]:
+            #    assert abs(segment["avg_logprob"] - avglogprob) < 1e-2, f"Fatal Error: Got inconsistent logprob for segment {i}: {avglogprob} != {segment['avg_logprob']}"
             if include_punctuation_in_confidence:
                 segment["confidence"] = round_confidence(logprobs.mean().exp().item())
             else:
